@@ -41,7 +41,7 @@ main {
     margin-right: 10%;
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     padding: 8px 16px;
     border-radius: 5px;
@@ -51,6 +51,20 @@ main {
 }
 .separator {
     padding: 3rem;
+}
+
+/* about section */
+#about-image{
+    max-width: 300px;
+    float:left;
+}
+#about-text{
+    padding-left: 350px;
+    padding-right: 300px;
+}
+.gallery{
+    padding-top: 50px;
+    clear: both;
 }
 
 /* project timelines */
