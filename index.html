@@ -3,55 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-
   <title>Shuang Lin</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Slick carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body>
+    <!-- Header Bar -->
     <div class="overlay"></div>
+    <header class="header">
+        <h1>Welcome!</h1>
+        <a class="header-sections" href="index.html">About Me</a>
+        <a class="header-sections" href="projects.html">Projects</a>
+    </header>
+    <main>
+        <section class="separator"></section>
 
-  <header>
-    <h1>Welcome!</h1>
-    
-    <!-- Button to go to the about page -->
-    <a class="header-sections" href="about.html">About Me</a>
-  </header>
-  <main>
-    <section class="separator">
-    </section>
+        <section class="about-section">
+        <div class="about-image">
+            <img src="your_picture.jpg" alt="Your Picture">
+        </div>
+        <div class="about-text">
+            <p>
+            Hi! I'm Shuang Lin
+            </p>
+        </div>
+        </section>
 
-    <section class="project 5">
-      <h2>Project n</h2>
-      <p>Description...</p>
-      <a href="#">View Project</a>
-    </section>
+        <div class="gallery">
+        <div><img src="photo1.jpg" alt="Photo 1"></div>
+        <div><img src="photo2.jpg" alt="Photo 2"></div>
+        <div><img src="photo3.jpg" alt="Photo 3"></div>
+        <!-- Add more photos to the gallery as needed -->
+        </div>
+    </main>
 
-    <section class="project 4">
-      <h2>Project n</h2>
-      <p>Description...</p>
-      <a href="#">View Project</a>
-    </section>
-
-    <section class="project 3">
-        <h2>Project n</h2>
-        <p>Description...</p>
-        <a href="#">View Project</a>
-    </section>
-
-    <section class="project 2">
-        <h2>Project n</h2>
-        <p>Description...</p>
-        <a href="#">View Project</a>
-    </section>
-
-    <section class="project 1">
-        <h2>Project n</h2>
-        <p>Description...</p>
-        <a href="#">View Project</a>
-    </section>
-
-    <!-- Add more project sections as needed -->
-    
-  </main>
+    <!-- Slick carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        // Initialize the Slick carousel
+        $(document).ready(function(){
+        $('.gallery').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+        });
+        });
+    </script>
 </body>
 </html>
