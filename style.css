@@ -1,6 +1,7 @@
 /* default page settings*/
 body {
     font-family: Arial, sans-serif;
+    font-size: 1.25rem;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -13,7 +14,7 @@ body {
     --accent: rgb(50, 50, 50);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     body{
         font-size: 0.75rem;
     }
@@ -223,8 +224,7 @@ nav {
 
 /* project timelines */
 .timeline{
-    width:100%;
-    padding:30px 20px;
+    width: 100%;
 }
 .timeline ul{
     list-style-type:none;
@@ -247,12 +247,16 @@ nav {
     text-align:center;
 }
 .timeline ul li .content h3{
-    font-size:17px;
+    font-size: 1.5rem;
     padding-top:5px;
 }
 .timeline ul li .content p{
-    padding:5px 0px 15px 0px;
-    font-size:15px;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
 }
 .timeline ul li:before{
     position:absolute;
@@ -273,4 +277,9 @@ nav {
 .timeline ul li:hover:before{
     background-color:#fff;
     box-shadow:0px 0px 10px 2px #fff;
+}
+.timeline ul li:hover .content p{
+    height: auto;
+    opacity: 1;
+    padding: 5px 0 15px 0;
 }
