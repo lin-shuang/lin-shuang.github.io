@@ -272,6 +272,10 @@ nav {
     opacity: 0;
     transition: height 0.3s ease, opacity 0.3s ease;
 }
+.timeline ul li .content img{
+    width: 100%;
+    height: auto;
+}
 .timeline ul li .content a{
     text-decoration: none;
     color: var(--accent);
@@ -316,8 +320,4 @@ nav {
 }
 .caption{
     text-align: center;
-}
-.mySlides img{
-    width: 100%;
-    height: auto;
 }
