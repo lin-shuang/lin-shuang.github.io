@@ -205,6 +205,8 @@ nav {
     grid-template-columns: auto 1fr; /* Create two columns, one for the image and one for the text */
     align-items: center; /* Vertically center the items */
     gap: 20px; /* Add some gap between the image and text */
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #about-image{
     width: 25%;
@@ -224,7 +226,14 @@ nav {
 
 /* project timelines */
 .timeline{
-    width: 100%;
+    width: 75%;
+    margin-left: 12%;
+}
+@media (max-width: 768px) {
+    .timeline{
+        width: 100%;
+        margin-left: 0;
+    }
 }
 .timeline ul{
     list-style-type:none;
