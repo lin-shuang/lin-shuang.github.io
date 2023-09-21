@@ -5,62 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
   <title>Shuang Lin</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Slick carousel CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body>
     <!-- Header Bar -->
-    <div class="header-bar">
-        <div class="overlay"></div>
-        <header>
-            <div class="header-text">
-                <h1>Welcome!</h1>
-            </div>
-            <div class="header-sections">
-                <a class="header-button" href="index.html">About Me</a>
-                <a class="header-button" href="projects.html">Projects</a>
-            </div>
-        </header>
-    </div>
+    <header>
+        <nav>
+          <div class="logo"><b>Shuang Lin</b></div>
+          <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="menu-overlay" id="menu-overlay"></div>
+    
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about"><b>About</b></a></li>
+            <li><a href="#projects-section"><b>Projects</b></a></li>
+            <li><a href="#services"><b>Resume</b></a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <!-- Background Overlay -->
+    <div class="overlay" id="overlay"></div>
     
     <main>
-        <section class="separator"></section>
-
+        <!-- About -->
+        <br id="about">
         <section id="about-section">
             <div>
-                <img src="./src/index/profilepic.jpg" alt="Profile Picture" id="about-image">
-                <p id="about-text">
-                    Hi! I'm Shuang Lin. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                <img src="./src/images/profilepic.jpg" alt="Profile Picture" id="about-image">
+                <p class="about-text">
+                    Hi! I'm Shuang, a dedicated student currently pursuing a Bachelor of Science in Cognitive Science with a Minor in Computer Science and Data Science at Lehigh University, set to graduate in June 2024. Throughout my academic journey, I've maintained a strong commitment to learning and practical application. My skill set spans a range of computer programming languages, data analysis tools, and graphic design software, making me well-prepared to tackle diverse challenges and contribute meaningfully to the software development field.
                 </p>
+                <p class="about-text">
+                    My current works are in mixed reality research, and freelancing web development.
+                </p>
+                
             </div>
         </section>
 
-        <section>
-            <div class="gallery">
-                <div><img src="photo1.jpg" alt="Photo 1"></div>
-                <div><img src="photo2.jpg" alt="Photo 2"></div>
-                <div><img src="photo3.jpg" alt="Photo 3"></div>
-                <!-- Add more photos to the gallery as needed -->
+        <section class="separator"></section>
+
+        <!-- Projects -->
+        <section id="projects-section">
+            <div class="timeline">
+                <ul>
+                <li>
+                    <span>3rd January 2020</span>
+                    <div class="content">
+                        <h3>Project 4</h3>
+                        <p>
+                            Description...
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span>21st Jun 2019</span>
+                    <div class="content">
+                        <h3>Project 3</h3>
+                        <p>
+                            Description...
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span>15th April 2018</span>
+                    <div class="content">
+                        <h3>Project 2</h3>
+                        <p>
+                            Description...
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span>22nd Mars 2017</span>
+                    <div class="content">
+                        <h3>Project 1</h3>
+                        <p>
+                            Description...
+                        </p>
+                    </div>
+                </li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <!-- Slick carousel JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        // Initialize the Slick carousel
-        $(document).ready(function(){
-        $('.gallery').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-        });
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="./src/scripts/nav-links.js"></script>
 </body>
 </html>

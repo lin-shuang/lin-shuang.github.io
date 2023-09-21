@@ -4,88 +4,231 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #c2c2c2;
+    background-color: var(--background);
+    color: var(--text);
+    --text: rgb(0, 0, 0);
+    --background: rgb(172, 156, 156);
+    --primary: rgb(255, 255, 255);
+    --secondary: rgb(58, 39, 39);
+    --accent: rgb(50, 50, 50);
 }
+
+@media (max-width: 900px) {
+    body{
+        font-size: 0.75rem;
+    }
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Header styles */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999; /* Ensures the header is on top of other content */
-    background-color: transparent;
-    color: #fff;
+    height: 1rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(5px); /* Add blur effect (may not be supported in all browsers) */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
     padding: 1rem;
+    z-index: 999; /* Ensure the header stays on top of other elements */
+}
+.logo {
+    font-size: 1.75rem;
+    position: absolute;
+    text-align: left;
+    left: 10%;
+    top: 0.25rem;
+    color: var(--primary);
+}
+@media (max-width: 900px) {
+    .logo {
+        text-align: center;
+    }
+}
+
+/* Menu icon styles */
+.menu-icon {
+    display: none;
+    margin-top: -1.25rem;
+}
+  
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 5px 0;
+}
+
+/* Navigation links styles */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header h1 {
-    margin: 0;
-    padding-left: 20px;
+.nav-links {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 1.00rem;
+    right: 10%;
+    padding: 1rem;
+    height: 2rem;
+    margin-top: 2.5rem;
 }
-main {
-    padding: 2rem;
+.nav-links li {
+    margin-left: 1rem;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    z-index: 9998; /* Ensures the overlay is below the header but above other content */
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-    backdrop-filter: blur(8px); /* Adds the blur effect */
-}
-.header-bar{
-    width: 100%;
-    height: 15%;
-    font-size: 150%;
-}
-.header-text{
-    float:left;
-}
-.header-sections{
-    display:contents;
-    text-align: center;
-}
-.header-button {
-    margin-right: 10%;
-    color: #fff;
+.nav-links a {
     text-decoration: none;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 8px 16px;
+    color: #fff;
+    padding: 0.5rem;
+}
+.nav-links a:hover {
+    background-color: rgb(32, 32, 32); /* Change color on hover */
+    transition: background-color 0.3s;
     border-radius: 5px;
+    padding: 0.5rem; /* Increase padding for a larger button */
 }
-.header-button:hover{
-    background-color: rgba(39, 39, 39, 0.6);
+
+/* Background Overlay styles */
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
 }
+
+.overlay.active {
+    display: block; /* Show the overlay when active */
+    backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    width: 100vh; 
+    height: 100vh;
+    z-index: 2;
+}
+  
+/* Media query for smaller screens */
+@media (max-width: 900px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0.5rem; /* Adjust as needed to avoid overlapping the header */
+      left: auto; /* Reset the right property to default */
+      background-color: var(--accent);
+      width: 25%;
+      z-index: 3; /* Ensure the menu stays above the rest of the content */
+      right: -100%; /* Move the links off the screen */
+      transition: right 0.3s ease-in-out; /* Smooth slide transition */
+      bottom: 0;
+      height: 100vh; /* Full viewport height */
+    }
+  
+    .nav-links li {
+      margin: 1rem 0;
+      font-size: 1rem;
+      text-align: center;
+    }
+    
+    .nav-links a:hover {
+      background-color: var(--background); /* Change color on hover */
+      transition: background-color 0.3s;
+      border-radius: 5px;
+      padding-right: 0.2rem;
+      padding-left: 0.2rem;
+    }
+  
+    /* Center the links vertically */
+    .nav-links ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  
+    .nav-links.active {
+      display: flex;
+      right: 0; /* Slide in from the right */
+    }
+  
+    .menu-icon {
+      display: block;
+      position: absolute; /* Adjust the position for the icon */
+      top: 2rem;
+      right: 13%; /* Move the icon to the left by 5% */
+      z-index: 999; /* Ensure the menu stays above the rest of the content */
+      padding-bottom: 0.9rem;
+      padding-right: 0.2rem;
+      padding-left: 0.2rem;
+    }
+  
+    .menu-overlay {
+      display: block;
+      position: absolute; /* Adjust the position for the icon */
+      top: 0.65rem;
+      right: 13%; /* Move the icon to the left by 5% */
+      z-index: 1000; /* Ensure the menu stays above the rest of the content */
+      padding-bottom: 2rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      opacity: 1; /* Initially invisible */
+      cursor: pointer;
+    }
+  
+    .menu-overlay:hover {
+      background-color: var(--primary); /* Change color on hover */
+      transition: background-color 0.3s;
+      border-radius: 5px;
+      padding-bottom: 2rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      opacity: 0.5; /* Initially invisible */
+    }
+}
+
 .separator {
-    padding: 3rem;
+    padding: 1rem;
 }
 
 /* about section */
+#about-section{
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Create two columns, one for the image and one for the text */
+    align-items: center; /* Vertically center the items */
+    gap: 20px; /* Add some gap between the image and text */
+}
 #about-image{
-    max-width: 300px;
+    width: 25%;
     height: auto;
     float:left;
+    margin-right: 5%;
+    margin-bottom: 5%;
 }
-#about-text{
-    padding-left: 350px;
-    padding-right: 300px;
-}
-.gallery{
-    padding-top: 50px;
-    clear: both;
+
+@media (max-width: 768px) {
+    #about-image{
+        width: 50%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+    }
 }
 
 /* project timelines */
 .timeline{
     width:100%;
-    color:#000;
     padding:30px 20px;
 }
 .timeline ul{
     list-style-type:none;
-    border-left:2px solid #000;
+    border-left:2px solid;
     padding:10px 5px;
 }
 .timeline ul li{
@@ -96,14 +239,14 @@ main {
 }
 .timeline ul li span{
     display:inline-block;
-    background-color:#997e6e;
+    background-color: var(--secondary);
+    color: var(--primary);
     border-radius:25px;
     padding:4px 18px;
     font-size:15px;
     text-align:center;
 }
 .timeline ul li .content h3{
-    color:#000;
     font-size:17px;
     padding-top:5px;
 }
