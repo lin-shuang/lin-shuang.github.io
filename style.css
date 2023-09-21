@@ -260,22 +260,17 @@ nav {
     font-size:15px;
     text-align:center;
 }
-.timeline ul li .content h3{
+.timeline ul li h3{
     font-size: 1.5rem;
     padding-top:5px;
 }
-.timeline ul li .content p{
+.timeline ul li .content{
     padding: 0;
     margin: 0;
     height: 0;
     overflow: hidden;
     opacity: 0;
     transition: height 0.3s ease, opacity 0.3s ease;
-}
-.timeline ul li.active .content p{
-    height: auto;
-    opacity: 1;
-    padding: 5px 0 15px 0;
 }
 .timeline ul li .content a{
     text-decoration: none;
@@ -307,6 +302,22 @@ nav {
     padding: 10%;
 }
 .timeline ul li.active:before{
-    background-color:#fff;
-    box-shadow:0px 0px 10px 2px #fff;
+    background-color:var(--primary);
+    box-shadow:0px 0px 10px 2px var(--primary);
+}
+.timeline ul li.active .content{
+    height: auto;
+    opacity: 1;
+    padding: 5px 0 15px 0;
+}
+.timeline ul li.active .content .dot.active{
+    background-color: var(--primary);
+    box-shadow:0px 0px 10px 2px var(--primary);
+}
+#caption{
+    text-align: center;
+}
+.mySlides img{
+    width: 100%;
+    height: auto;
 }
