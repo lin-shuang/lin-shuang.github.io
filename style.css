@@ -314,7 +314,7 @@ nav {
     background-color: var(--primary);
     box-shadow:0px 0px 10px 2px var(--primary);
 }
-#caption{
+.caption{
     text-align: center;
 }
 .mySlides img{
