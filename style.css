@@ -245,6 +245,7 @@ nav {
     padding:10px 5px;
 }
 .timeline ul li{
+    margin-bottom: 10px;
     padding:20px 20px;
     position:relative;
     cursor:pointer;
@@ -271,6 +272,11 @@ nav {
     opacity: 0;
     transition: height 0.3s ease, opacity 0.3s ease;
 }
+.timeline ul li.active .content p{
+    height: auto;
+    opacity: 1;
+    padding: 5px 0 15px 0;
+}
 .timeline ul li .content a{
     text-decoration: none;
     color: var(--accent);
@@ -295,12 +301,12 @@ nav {
     border-radius:25px;
     padding: 10%;
 }
-.timeline ul li:hover:before{
+.timeline ul li.active{
+    background-color:#997e6ea2;
+    border-radius:25px;
+    padding: 10%;
+}
+.timeline ul li.active:before{
     background-color:#fff;
     box-shadow:0px 0px 10px 2px #fff;
-}
-.timeline ul li:hover .content p{
-    height: auto;
-    opacity: 1;
-    padding: 5px 0 15px 0;
 }
