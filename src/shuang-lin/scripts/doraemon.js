@@ -31,11 +31,11 @@ function setIdleState() {
     }
 }
 
-// Perform 33 random actions
+// Perform 27 random actions
 function performRandomAction() {
     if (isIdle) {
         isIdle = false;
-        let randomGifNumber = Math.floor(Math.random() * 33) + 1;
+        let randomGifNumber = Math.floor(Math.random() * 27) + 1;
         doraemonElement.style.backgroundImage = `url('./src/shuang-lin/images/doraemon/random/doraemon-random-${randomGifNumber}.gif')`;
         
         // Random action play for 3s
