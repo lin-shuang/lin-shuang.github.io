@@ -29,10 +29,6 @@ function setIdleState() {
             doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/idle/doraemon-idle.gif')";
         }
     }
-    else{
-        //debug
-        console.log("ERROR, not awake");
-    }   
 }
 
 // Perform 33 random actions
@@ -47,17 +43,9 @@ function performRandomAction() {
             setIdleState();
         }, 5000);
     }
-    else{
-        //debug
-        console.log("ERROR, not idle");
-    }
 }
 
 function checkStatesPeriodically() {
-
-    //debug
-    console.log("Checking...");
-
     // Every 5s, 2/3 to random walk, 1/3 to random act
     setInterval(function () {
         if (isAwake && isIdle) {
@@ -76,9 +64,6 @@ function checkStatesPeriodically() {
 function startWalking(targetPosition) {
     if (isAwake && isIdle) {
 
-        //debug
-        console.log("Walking...");
-
         isWalking = true;
         isIdle = false;
         doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/moving/doraemon-hop.gif')";
@@ -89,17 +74,10 @@ function startWalking(targetPosition) {
         // Follow cursor
         if(inHero && targetPosition != -1){ 
             
-            //debug
-            console.log("Following Cursor...");
-
             deltaX = targetPosition - initialX;
         }
         // Random walk
         else{ 
-
-            //debug
-            console.log("Random Walk...");
-
             const pageWidth = document.body.clientWidth;
             const range1 = [-pageWidth/3, -20];
             const range2 = [20, pageWidth/3];
@@ -129,11 +107,6 @@ function startWalking(targetPosition) {
 
         // Calculate duration
         const animationDuration = Math.max(500, (Math.abs(deltaX) / walkSpeed) * 1000);
-
-        //debug        
-        //console.log("pageWidth: ", pageWidth);
-        console.log("animationDuration: ", animationDuration);
-        console.log("deltaX: ", deltaX);
 
         // Calculate the animation start time
         const startTime = performance.now();
@@ -198,10 +171,5 @@ heroElement.addEventListener('mousemove', function (e) {
         if (Math.abs(targetX) >= 20) {
             startWalking(targetX);
         }
-        //debug
-        console.log("Entered Hero...");
-        console.log("currentPosition:'", currentPosition);
-        console.log("targetX:'", targetX);
-        //console.log("distance:'", distance);
     }
 });
