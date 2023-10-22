@@ -187,7 +187,7 @@ nav {
       transition: background-color 0.3s;
       border-radius: 5px;
       padding-bottom: 2rem;
-      padding-right: 1rem;
+      padding-right: 0.95rem;
       padding-left: 1rem;
       opacity: 0.5; /* Initially invisible */
     }
@@ -209,6 +209,7 @@ nav {
     background-repeat: no-repeat;
     background-position-y: 100%;
     color: #fff;
+    height: 300px;
 }
 
 /* Doraemon */
@@ -356,6 +357,7 @@ footer {
 .social-icons a{
     text-decoration: none;
     font-size: 30px;
+    padding: 10px;
 }
 
 /* Style all font awesome icons */
@@ -367,4 +369,5 @@ footer {
 }
 .fa:hover {
     color: #fff;
+    transform: scale(1.2);
 }
