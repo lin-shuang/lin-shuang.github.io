@@ -221,6 +221,7 @@ nav {
     background-size: cover;
     cursor: pointer;
     transition: background-image 0.2s;
+    z-index: 1;
 }
 
 /* about section */
@@ -357,7 +358,10 @@ footer {
 .social-icons a{
     text-decoration: none;
     font-size: 30px;
-    padding: 10px;
+    padding: 0.5rem;
+}
+.social-icons-hero a{
+    padding: 1.75rem;
 }
 
 /* Style all font awesome icons */
