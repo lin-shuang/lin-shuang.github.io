@@ -47,19 +47,15 @@ function checkStatesPeriodically() {
     }, 20000);
 }
 
-doraemonElement.addEventListener('click', function () {
+// Wake Doraemon by hovering over
+doraemonElement.addEventListener('mouseenter', function () {
     if (!isAwake) {
-        
-        //debug
-        console.log("Waking...");
-        
         wakeUpDoraemon();
         checkStatesPeriodically(); // Start checking states after waking up
-    } else {
-
-        //debug
-        console.log("Playing Random Anim...");
-
-        performRandomAction();
     }
+});
+
+// Check clicks to play anims
+doraemonElement.addEventListener('click', function () {
+    performRandomAction();
 });

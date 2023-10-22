@@ -199,19 +199,16 @@ nav {
 
 /* Hero section styles */
 .hero {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding-top: 10rem;
+    align-items: center;
+    padding-top: 5rem;
     background-color: #333;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 100%;
-}
-@media (max-width: 900px) {
-    .hero {
-      padding-top: 5rem;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    color: #fff;
 }
 
 /* Doraemon */
