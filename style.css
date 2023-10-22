@@ -213,12 +213,13 @@ nav {
 
 /* Doraemon */
 .doraemon {
+    position: relative;
     width: 100px;
     height: 100px;
     background-image: url('./src/shuang-lin/images/doraemon/sleep/doraemon-sleep.gif');
     background-size: cover;
     cursor: pointer;
-    transition: background-image 0.5s;
+    transition: background-image 0.2s;
 }
 
 /* about section */
