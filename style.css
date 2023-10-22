@@ -7,6 +7,7 @@ body {
     padding: 0;
     background-color: var(--background);
     color: var(--text);
+    transition: all .3s ease-in-out;
     --text: rgb(0, 0, 0);
     --background: rgb(172, 156, 156);
     --primary: rgb(255, 255, 255);
@@ -320,4 +321,27 @@ nav {
 }
 .caption{
     text-align: center;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 10px;
+    text-align: center;
+    color: var(--background);
+    transition: all .3s ease-in-out;
+}
+.fa:hover {
+    color: #fff;
 }

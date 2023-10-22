@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+  <title>Shuang Lin</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./src/shuang-lin/fonts/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+    <!-- Header Bar -->
+    <header>
+        <nav>
+          <div class="logo"><b>Shuang Lin</b></div>
+          <div class="menu-icon" id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="menu-overlay" id="menu-overlay"></div>
+    
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about"><b>About</b></a></li>
+            <li><a href="#projects"><b>Projects</b></a></li>
+            <li><a href="./src/shuang-lin/resume/Shuang_Lin_Resume.pdf" download="Shuang_Lin_Resume.pdf" target="_blank"><b>Resume</b></a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <!-- Background Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <main>
+        <!-- About -->
+        <br id="about">
+        <section id="about-section">
+            <div>
+                <img src="./src/shuang-lin/images/profilepic.jpg" alt="Profile Picture" id="about-image">
+                <p class="about-text">
+                    Hi! I'm Shuang, a dedicated student currently pursuing a Bachelor of Science in Cognitive Science with a Minor in Computer Science and Data Science at Lehigh University, set to graduate in June 2024. Throughout my academic journey, I've maintained a strong commitment to learning and practical application. My skill set spans a range of computer programming languages, data analysis tools, and graphic design software, making me well-prepared to tackle diverse challenges and contribute meaningfully to the software development field.
+                </p>
+                <i class="about-text">
+                    My current works are in mixed reality research, and freelancing web development.
+                </i>
+                
+            </div>
+        </section>
+
+        <section class="separator" id="projects"></section>
+
+        <!-- Projects -->
+        <section id="projects-section">
+            <div class="timeline">
+                <ul>
+                    <li>
+                        <span>September - October 2023</span>
+                        <h3>Top Cut Hair Salon</h3>
+                        <div class="content">
+                            <p>An asynchronous multiplayer game in which you compete with other players to reach the longest distance ran as a cute Capybara. You can chat with other players and see each other's scores (distance) on the leaderboard.</p>
+                            <p>This is my first time experiencing the full stack, and a full game development process. Shoutout to my teammate, Carlos Garro, for coding the physics and controls of the game. I had so much fun drawing the Capy and the environment. The backend server set up was annoying, but worth it. The frontend design process was fun, I really enjoyed writing the frontend side. It felt exhilarating when everything was working as intended at the end.</p>
+                            <a href="https://github.com/lin-shuang/capy-racing" target="_blank"><p>View GitHub</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Feburary - May 2023</span>
+                        <h3>Toy Google Maps</h3>
+                        <div class="content">
+                            <p>This project is about creating a toy model of Google Maps that can predict personalized travel time for a given trip. The project consists of three stages: map matching, traffic speed estimation, and travel time prediction. We used a road network data from San Francisco and a mobility trace data from the Cabspotting project. We implemented various methods such as Hidden Markov Model, XGBoost, and K-means to achieve the desired functionalities. The final performance of the travel time estimation is measured in mean absolute error (MAE). Our model performance resulted in 199.499 seconds; about 3 minutes of error.</p>
+                            <p>This is the first time I've applied geospatial data in software development. It sparked my interest in real-world data because of the endless practicalities it can provide. Shoutout to my teammate, Xiyang Hu, for the endless nights we stayed holed up in the library, coding and researching methods.</p>
+                            <a href="./src/shuang-lin/docs/Toy_Google_Map.pdf" download="Toy_Google_Map.pdf" target="_blank"><p>View Documentation</p></a>
+                                
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container" id="slideshow1">
+                                <!-- Slides -->
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Toy_Google_Maps_Stage_1.jpg" alt="Stage 1">
+                                </div>
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Toy_Google_Maps_Stage_2.jpg" alt="Stage 2">
+                                </div>
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Toy_Google_Maps_Stage_3.jpg" alt="Stage 3">
+                                </div>
+                                <!-- Image captions -->
+                                <div class="caption-container">
+                                    <p class="caption" id="caption1"></p>
+                                </div>
+                            </div>
+                            <!-- Dots container -->
+                            <div style="text-align:center" id="dots1">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>December 2022</span>
+                        <h3>Capy Racing</h3>
+                        <div class="content">
+                            <p>An asynchronous multiplayer game in which you compete with other players to reach the longest distance ran as a cute Capybara. You can chat with other players and see each other's scores (distance) on the leaderboard.</p>
+                            <p>This is my first time experiencing the full stack, and a full game development process. Shoutout to my teammate, Carlos Garro, for coding the physics and controls of the game. I had so much fun drawing the Capy and the environment. The backend server set up was annoying, but worth it. The frontend design process was fun, I really enjoyed writing the frontend side. It felt exhilarating when everything was working as intended at the end.</p>
+                            <a href="https://github.com/lin-shuang/capy-racing" target="_blank"><p>View GitHub</p></a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>November - December 2022</span>
+                        <h3>Predicting COVID-19 Infection Rates for Different Zip Codes in Chicago</h3>
+                        <div class="content">
+                            <p>In a team of 5, we analyzed the official geospatial COVID-19 data from various Chicago regions dating from January 2020 to October 2022. We carried out the prediction and analysis of multiple models on the data. We used the Time Series model to estimate the pattern of COVID infections in each region in mid-age, monthly, and seasonally. For the prediction of the number of weekly infections, we also used several different models to make judgments. Logistic regression, Naive Bayes, decision tree, and K-NN. In each model, we used 10-fold validation to split the data to get the highest accuracy of the model. We take the data predicted by different models and compare them to see the differences. At the same time, we also used the map data of Chicago to show the data analysis in a dynamic way. The audience of such analysis was real estate agencies in Chiacgo on location desirability.</p>
+                            <p>This is was my introduction to data science course, so it was the first time I worked on a large data project cooperatively. It was fun coming up with theories of the numbers as a group. We shared opinions and doubts, and were able to create this amazing project. Shoutout to my teammates, Tongshu Wu, Mario Martino, Jacklyn Clauss, and Gabriella Rub for the fun and educating time.</p>
+                            <a href="./src/shuang-lin/docs/Predicting COVID-19 Infection Rates for Different Zip Codes in Chicago.pdf" download="Predicting COVID-19 Chicago.pdf" target="_blank"><p>View Documentation</p></a>
+                        
+                            <img src="./src/shuang-lin/images/Covid_Chicago_1.gif" alt="Covid Growth by Zip">
+                            <p class="caption">Covid Growth by Zip</p>
+                            <br>
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container" id="slideshow2">
+                                <!-- Slides -->
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Covid_Chicago_2.png" alt="Hot Spots">
+                                </div>
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Covid_Chicago_3.png" alt="Cases vs. Dates">
+                                </div>
+                                <div class="mySlides">
+                                    <img src="./src/shuang-lin/images/Covid_Chicago_4.jpg" alt="Cases vs. Seasons">
+                                </div>
+                                <!-- Image captions -->
+                                <div class="caption-container">
+                                    <p class="caption" id="caption2"></p>
+                                </div>
+                            </div>
+                            <!-- Dots container -->
+                            <div style="text-align:center" id="dots2">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>August - December 2022</span>
+                        <h3>Web Games & Tools</h3>
+                        <div class="content">
+                            <p>This is a collection of all the little games and tools I created during my academic journey to learn web development. Shoutout to my teacher, Professor James Femister!</p>
+                            <a href="./src/pages/web-games-tools/web-games-tools.html" target="_blank"><i>Click Here to View</i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>To be continued...</span>
+                        <div class="content">
+                            <h3>There's more!</h3>
+                            <p>Just gimmie some time to add them! lol</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2023 Shuang Lin</div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/shuang__________" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/shuanglin-/" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/@linshuang" target="_blank">
+                <i class="fa fa-youtube"></i>
+            </a>
+            <a href="https://github.com/lin-shuang" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./src/shuang-lin/scripts/nav-links.js"></script>
+    <script src="./src/shuang-lin/scripts/timeline-list.js"></script>
+    <script src="./src/shuang-lin/scripts/slideshow.js"></script>
+</body>
+</html>
