@@ -322,7 +322,7 @@ nav {
 .timeline ul li:hover{
     background-color:#997e6ea2;
     border-radius:25px;
-    padding: 10%;
+    padding-left: 10%;
 }
 .timeline ul li.active{
     background-color:#997e6ea2;
