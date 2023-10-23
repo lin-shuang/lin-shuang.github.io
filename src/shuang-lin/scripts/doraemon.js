@@ -48,7 +48,7 @@ function performRandomAction() {
 function checkStatesPeriodically() {
     // Every 5s, 2/3 to random walk, 1/3 to random act
     setInterval(function () {
-        if (isAwake && isIdle) {
+        if (isAwake && isIdle && !inHero) {
             let walkOrAct = Math.floor(Math.random() * 3);
 
             if(walkOrAct == 0){
@@ -77,7 +77,7 @@ function startWalking(targetPosition) {
             deltaX = targetPosition - initialX;
         }
         // Random walk
-        else{ 
+        else if(!inHero){ 
             const pageWidth = document.body.clientWidth;
             const range1 = [-pageWidth/3, -20];
             const range2 = [20, pageWidth/3];
@@ -161,7 +161,6 @@ heroElement.addEventListener('mouseleave', function (e) {
 });
 heroElement.addEventListener('mousemove', function (e) {
     
-    let currentPosition = parseFloat((getComputedStyle(doraemonElement).left) || 0);
     if (inHero) {
  
         // Calculate the cursorX as the distance between the cursor's x-coordinate and page center
