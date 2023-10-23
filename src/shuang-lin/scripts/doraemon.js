@@ -63,17 +63,11 @@ function checkStatesPeriodically() {
 
 function startWalking(targetPosition) {
     if (isAwake && isIdle) {
-
-        isWalking = true;
-        isIdle = false;
-        doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/moving/doraemon-hop.gif')";
-
         // Get doraemon position
         const initialX = parseFloat((getComputedStyle(doraemonElement).left+50) || 0);
         
         // Follow cursor
-        if(inHero && targetPosition != -1){ 
-            
+        if(inHero && targetPosition != -1){    
             deltaX = targetPosition - initialX;
         }
         // Random walk
@@ -95,16 +89,16 @@ function startWalking(targetPosition) {
         }
 
         // Check if should run
-        let walkSpeed = 50; // Default speed
-        if(deltaX > 125){
+        let walkSpeed = 50; // Default 50
+        isWalking = true;
+        isIdle = false;
+        if(deltaX > 125 || deltaX < -125){ // Run
             walkSpeed = 150;
             doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/moving/doraemon-run.gif')";
         }
-        else if(deltaX < -125){
-            walkSpeed = 150;
-            doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/moving/doraemon-run.gif')";
+        else{ // Walk
+            doraemonElement.style.backgroundImage = "url('./src/shuang-lin/images/doraemon/moving/doraemon-hop.gif')";
         }
-
         // Calculate duration
         const animationDuration = Math.max(500, (Math.abs(deltaX) / walkSpeed) * 1000);
 
