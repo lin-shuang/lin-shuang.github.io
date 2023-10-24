@@ -227,8 +227,10 @@ nav {
     z-index: 0;
 }
 .cursor-image {
-    position: absolute;
+    position: fixed;
     pointer-events: none; /* Ensure the cursor does not interfere with other elements */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 /* about section */

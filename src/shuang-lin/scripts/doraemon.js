@@ -10,7 +10,6 @@ let deltaX = 0;
 // Set up dorayaki cursor
 cursorImage.src = './src/shuang-lin/images/doraemon/cursor/cursor-dorayaki.png';
 cursorImage.className = 'cursor-image';
-cursorImage.style.display = 'none'; // Initially hide the cursor image
 document.body.appendChild(cursorImage);
 
 
@@ -159,13 +158,13 @@ heroElement.addEventListener('mouseenter', function (e) {
     inHero = true;
 
     // Show dorayaki
-    cursorImage.style.display = 'block';
+    cursorImage.style.opacity = 1;
 });
 heroElement.addEventListener('mouseleave', function (e) {
     inHero = false;
 
     // Hide dorayaki
-    cursorImage.style.display = 'none';
+    cursorImage.style.opacity = 0;
 });
 heroElement.addEventListener('mousemove', function (e) {
     
