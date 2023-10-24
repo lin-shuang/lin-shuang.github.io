@@ -73,7 +73,6 @@ function startWalking(targetPosition) {
     if (isAwake && isIdle) {
         // Get doraemon position
         let initialX = parseFloat((getComputedStyle(doraemonElement).left+50) || 0);
-        console.log("initialX ", initialX);//debug
 
         // Follow cursor
         if(inHero && targetPosition != -1){    
@@ -88,10 +87,7 @@ function startWalking(targetPosition) {
             const randomX = Math.random() * (randomRange[1] - randomRange[0]) + randomRange[0];
             deltaX = randomX - initialX;
         }
-
-        //debug
-        console.log("deltaX ", deltaX);
-
+        
         // Check direction
         if(deltaX > 0){
             doraemonElement.style.transform = "scaleX(1)"; // No flip, default
@@ -186,7 +182,6 @@ heroElement.addEventListener('mousemove', function (e) {
 
     //  Check mouse for 5s inactivity
     setTimeout(function () {
-        console.log("Inactive...");//debug
         inHero = false;
     }, 10000);
 
