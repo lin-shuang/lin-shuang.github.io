@@ -211,6 +211,9 @@ nav {
     color: #fff;
     height: 300px;
 }
+.intro-text {
+    z-index: 1;
+}
 
 /* Doraemon */
 .doraemon {
@@ -221,7 +224,11 @@ nav {
     background-size: cover;
     cursor: pointer;
     transition: background-image 0.2s;
-    z-index: 1;
+    z-index: 0;
+}
+.cursor-image {
+    position: absolute;
+    pointer-events: none; /* Ensure the cursor does not interfere with other elements */
 }
 
 /* about section */

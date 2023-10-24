@@ -1,10 +1,18 @@
 let doraemonElement = document.querySelector('.doraemon');
 let heroElement = document.querySelector('.hero');
+var cursorImage = document.createElement('img');
 let isAwake = false;
 let isIdle = false;
 let isWalking = false;
 let inHero = false;
 let deltaX = 0;
+
+// Set up dorayaki cursor
+cursorImage.src = './src/shuang-lin/images/doraemon/cursor/cursor-dorayaki.png';
+cursorImage.className = 'cursor-image';
+cursorImage.style.display = 'none'; // Initially hide the cursor image
+document.body.appendChild(cursorImage);
+
 
 function wakeUpDoraemon() {
     isAwake = true;
@@ -64,8 +72,9 @@ function checkStatesPeriodically() {
 function startWalking(targetPosition) {
     if (isAwake && isIdle) {
         // Get doraemon position
-        const initialX = parseFloat((getComputedStyle(doraemonElement).left+50) || 0);
-        
+        let initialX = parseFloat((getComputedStyle(doraemonElement).left+50) || 0);
+        console.log("initialX ", initialX);//debug
+
         // Follow cursor
         if(inHero && targetPosition != -1){    
             deltaX = targetPosition - initialX;
@@ -79,6 +88,9 @@ function startWalking(targetPosition) {
             const randomX = Math.random() * (randomRange[1] - randomRange[0]) + randomRange[0];
             deltaX = randomX - initialX;
         }
+
+        //debug
+        console.log("deltaX ", deltaX);
 
         // Check direction
         if(deltaX > 0){
@@ -149,20 +161,36 @@ doraemonElement.addEventListener('click', function () {
 // Doraemon follows cursor
 heroElement.addEventListener('mouseenter', function (e) {
     inHero = true;
+
+    // Show dorayaki
+    cursorImage.style.display = 'block';
 });
 heroElement.addEventListener('mouseleave', function (e) {
     inHero = false;
+
+    // Hide dorayaki
+    cursorImage.style.display = 'none';
 });
 heroElement.addEventListener('mousemove', function (e) {
     
-    if (inHero) {
- 
-        // Calculate the cursorX as the distance between the cursor's x-coordinate and page center
-        const targetX = e.pageX - document.body.clientWidth/2;
-    
-        // Check if the cursor has moved over 50px
-        if (Math.abs(targetX) >= 20) {
-            startWalking(targetX);
-        }
+    // Turn back on every mouse activity
+    inHero = true;
+
+    // Calculate the cursorX as the distance between the cursor's x-coordinate and page center
+    let targetX = e.pageX - document.body.clientWidth/2;
+
+    // Check if the cursor has moved over 50px
+    if (Math.abs(targetX) >= 50) {
+        startWalking(targetX);
     }
+
+    //  Check mouse for 5s inactivity
+    setTimeout(function () {
+        console.log("Inactive...");//debug
+        inHero = false;
+    }, 10000);
+
+    // Dorayaki follows cursor
+    cursorImage.style.left = e.clientX-15 + 'px';
+    cursorImage.style.top = e.clientY+15 + 'px';
 });
