@@ -170,19 +170,23 @@ heroElement.addEventListener('mousemove', function (e) {
     
     // Turn back on every mouse activity
     inHero = true;
+    cursorImage.style.opacity = 1;
 
     // Calculate the cursorX as the distance between the cursor's x-coordinate and page center
     let targetX = e.pageX - document.body.clientWidth/2;
 
-    // Check if the cursor has moved over 50px
-    if (Math.abs(targetX) >= 50) {
+    // Check if the cursor has moved over threshold
+    if (Math.abs(targetX) >= 66) {
         startWalking(targetX);
     }
 
     //  Check mouse for 5s inactivity
-    setTimeout(function () {
-        inHero = false;
-    }, 10000);
+    setInterval(function () {
+        if(isIdle){
+            inHero = false;
+            cursorImage.style.opacity = 0;
+        }
+    }, 2000);
 
     // Dorayaki follows cursor
     cursorImage.style.left = e.clientX-15 + 'px';
