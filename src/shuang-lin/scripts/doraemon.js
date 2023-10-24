@@ -56,6 +56,7 @@ function checkStatesPeriodically() {
     // Every 5s, 2/3 to random walk, 1/3 to random act
     setInterval(function () {
         if (isAwake && isIdle && !inHero) {
+            cursorImage.style.opacity = 0; // Hide dorayaki
             let walkOrAct = Math.floor(Math.random() * 3);
 
             if(walkOrAct == 0){
@@ -166,8 +167,9 @@ heroElement.addEventListener('mouseleave', function (e) {
     // Hide dorayaki
     cursorImage.style.opacity = 0;
 });
-heroElement.addEventListener('mousemove', function (e) {
-    
+
+// Follow cursor function
+function cursorActivity(e) {
     // Turn back on every mouse activity
     inHero = true;
     cursorImage.style.opacity = 1;
@@ -176,19 +178,20 @@ heroElement.addEventListener('mousemove', function (e) {
     let targetX = e.pageX - document.body.clientWidth/2;
 
     // Check if the cursor has moved over threshold
-    if (Math.abs(targetX) >= 66) {
+    if (Math.abs(targetX) >= 50) {
         startWalking(targetX);
     }
 
-    //  Check mouse for 5s inactivity
+    //  Check cursor for 5s inactivity
     setInterval(function () {
         if(isIdle){
             inHero = false;
-            cursorImage.style.opacity = 0;
         }
-    }, 2000);
+    }, 5000);
 
     // Dorayaki follows cursor
     cursorImage.style.left = e.clientX-15 + 'px';
     cursorImage.style.top = e.clientY+15 + 'px';
-});
+}
+heroElement.addEventListener('mousemove', cursorActivity);
+heroElement.addEventListener('click', cursorActivity);
