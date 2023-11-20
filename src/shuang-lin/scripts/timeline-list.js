@@ -5,17 +5,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add click event listener to each timeline item
     timelineItems.forEach((item) => {
         item.addEventListener("click", function (event) {
-            // Toggle the "active" class to expand/collapse the item
-            this.classList.toggle("active");
-            event.stopPropagation(); // Prevent the click event from bubbling up
-        });
-    });
+            console.log(event.target.nodeName);
 
-    // Add a click event listener to the document to collapse items when clicking outside
-    document.addEventListener("click", function (event) {
-        timelineItems.forEach((item) => {
-            if (!item.contains(event.target)) {
-                item.classList.remove("active");
+            // Check if the element that was clicked is a paragraph or anchor
+            if(event.target.nodeName == "P" || event.target.nodeName == "A"){
+                return;
+            }
+            else{
+                // Otherwise, toggle the "active" class to expand/collapse the item
+                this.classList.toggle("active");
+                event.stopPropagation(); // Prevent the click event from bubbling up
             }
         });
     });
