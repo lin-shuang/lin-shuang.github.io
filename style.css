@@ -403,3 +403,74 @@ footer {
     color: #fff;
     transform: scale(1.2);
 }
+
+/* Image Grid styles */
+#grid {
+    text-align: center;
+    padding: 2rem;
+}
+.grid img {
+    max-width: 500px;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px; /* Adjust the gap as needed */
+    margin: 5%;
+}
+.grid-item {
+    text-align: center;
+    position: relative; /* Required for absolute positioning of description */
+}
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Description styles */
+.grid-item .description {
+    display: block;
+    position: absolute;
+    color: var(--text);
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    top: 35%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+.grid-item .description-cover {
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Background color for description */
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); /* Safari support */
+    position: absolute;
+    border-radius: 7px;
+}
+.grid-item .description-clickable {
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+/* Hover effect - show description on hover */
+.grid-item:hover .description{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+}
+.grid-item:hover .description-cover{
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+}
