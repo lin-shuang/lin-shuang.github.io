@@ -432,11 +432,11 @@ footer {
 .grid-item .description {
     display: block;
     position: absolute;
-    color: var(--text);
+    color: white;
     padding: 20px;
     text-align: center;
     font-size: 2rem;
-    top: 35%;
+    top: 27.5%;
     left: 0;
     right: 0;
     opacity: 0;
